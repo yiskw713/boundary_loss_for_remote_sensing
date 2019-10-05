@@ -74,7 +74,7 @@ class BoundaryLoss(nn.Module):
         BF1 = 2 * P * R / (P + R + 1e-7)
 
         # summing BF1 Score for each class and average over mini-batch
-        loss = torch.mean(torch.sum(1 - BF1, dim=1), dim=0)
+        loss = torch.mean(1 - BF1)
 
         return loss
 
